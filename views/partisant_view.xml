@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record id="view_partisant_form_inherit" model="ir.ui.view">
+             <field name="name">Region</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="passport_id" position="replace">
+                    <field name="numero_cedeao" colspan="4"/>
+                </field>
+            </field>
+        </record>
+    </data>
+    <menuitem
+        name="S24"
+        id="menu_s24_root"/>
+
+<!--    <menuitem-->
+<!--        name="Département"-->
+<!--        id="menu_s24_departement"-->
+<!--        parent="menu_s24_root"-->
+<!--        sequence="1"/>-->
+    <menuitem
+        id="menu_s24_partisant"
+        name="Partisant"
+        parent="menu_s24_root"
+        action="hr.open_view_employee_list_my"
+        sequence="2"/>
+</odoo>

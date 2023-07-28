@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record id="view_departement_form_inherit" model="ir.ui.view">
+             <field name="name">hr.department.form</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <field name="manager_id" position="replace">
+                    <field name="nombre_habitant"/>
+                    <field name="coordonnateur_id"/>
+                    <field name="nombre_partisant"/>
+                </field>
+<!--                <field name="company_id" position="replace">-->
+<!--                    <notebook col="9">-->
+<!--                      <page name="page_lines" string="Communes">-->
+<!--                         <field name="partisant_ids">-->
+<!--                                 <tree string="La liste des communes" editable="bottom">-->
+<!--                                     <field name="name" colspan="4"/>-->
+<!--                                     <field name="numero_cedeao" colspan="4"/>-->
+<!--                                     <field name="identification_id" colspan="4"/>-->
+<!--                                     <field name="commune_id" colspan="4"/>-->
+
+<!--                                 </tree>-->
+<!--                         </field>-->
+<!--                      </page>-->
+<!--                    </notebook>-->
+<!--                </field>-->
+            </field>
+        </record>
+    </data>
+
+<menuitem
+        name="S24"
+        id="menu_s24_root"/>
+
+    <menuitem
+        name="Département"
+        id="menu_s24_ville"
+        parent="menu_s24_root"
+        sequence="1"/>
+    <menuitem
+        id="menu_s24_department"
+        name="Département"
+        parent="menu_s24_ville"
+        action="hr.hr_department_tree_action"
+        sequence="1"/>
+</odoo>
